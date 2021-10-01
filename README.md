@@ -30,7 +30,7 @@ yarn add sort-youtube-videos
 
 # Sorting options:
 
-- Sort by views (least viewed video to most viewed video `1 view- 1M views`)
+- Sort by views (least viewed video to most viewed video `1 view - 1M views`)
 - Sort by video duration
 - More sorting options coming soon
 

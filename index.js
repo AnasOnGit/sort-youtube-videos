@@ -116,4 +116,4 @@ const sortByDuration = async (channelId, from = "sl") => {
   return { message: `"${from}" is not a valid argument.Try 'sl' or 'ls'.` };
 };
 
-module.export = { sortLowToHigh, sortByDuration, search_channel };
+module.exports = { sortLowToHigh, sortByDuration, search_channel };
