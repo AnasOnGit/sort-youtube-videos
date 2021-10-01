@@ -1,0 +1,28 @@
+{
+  "name": "sort-youtube-videos",
+  "version": "1.0.0",
+  "description": "sort youtube videos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnasOnGit/sort-youtube-videos.git"
+  },
+  "keywords": [
+    "youtube",
+    "video",
+    "sort"
+  ],
+  "author": "AnasOnGit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnasOnGit/sort-youtube-videos/issues"
+  },
+  "homepage": "https://github.com/AnasOnGit/sort-youtube-videos#readme",
+  "dependencies": {
+    "@yimura/scraper": "^1.2.3",
+    "yt-channel-info": "^2.2.0"
+  }
+}
