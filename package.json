@@ -1,6 +1,6 @@
 {
   "name": "sort-youtube-videos",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "sort youtube videos",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,9 @@
     "least viewed",
     "video",
     "duration",
-    "sorting"
+    "sorting",
+    "api",
+    "Views"
   ],
   "author": "AnasOnGit",
   "license": "ISC",
