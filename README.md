@@ -25,7 +25,9 @@ yarn add sort-youtube-videos
 
 | Parameter | Description                           | required |
 | --------- | ------------------------------------- | -------- |
-| Url       | YouTube channel `url` or `channel Id` | `true`   |
+| URL       | YouTube channel `url` or `channel Id` | `true`   |
+
+## Code
 
 ```javascript
 const { sortLowToHigh } = require("sort-youtube-videos");
@@ -77,11 +79,14 @@ sortLowToHigh(url).then((res) => console.log(res));
 
 | Parameter | Description                                                                              | required |
 | --------- | ---------------------------------------------------------------------------------------- | -------- |
-| Url       | YouTube channel `url` or `channel Id`                                                    | `true`   |
+| URL       | YouTube channel `url` or `channel Id`                                                    | `true`   |
 | sortBy    | Two sorting options are available: Default `sl` (short -> long) and `ls` (long -> short) | `false`  |
+
+## Code
 
 ```javascript
 const { sortByDuration } = require("sort-youtube-videos");
+// import { sortByDuration } "sort-youtube-videos";
 
 const url = "https://www.youtube.com/channel/UC5RRWuMJu7yP1DQwnW_nAvA"; //url or channel id
 const sortBy = "sl"; // options: sl - ls
@@ -124,6 +129,46 @@ sortByDuration(url, sortBy).then((res) => console.log(res));
     premium: false,
   },
   //   ... 109 more items
+];
+```
+
+## Get YouTube channel **URL**
+
+| Parameter    | Description                   | required |
+| ------------ | ----------------------------- | -------- |
+| Channel Name | To get YouTube channel `name` | `true`   |
+
+## Code
+
+```javascript
+const { search_channel } = require("sort-youtube-videos");
+// import { search_channel } from "sort-youtube-videos";
+
+const channelName = "Codestick"; //url or
+search_channel(channelName).then((res) => console.log(res));
+
+// response type
+// return all channel with this name
+[
+  {
+    channelId: "UCYGZ4todIWGIUS1B8ZjML1w",
+    description: "Learn Coding... Happy Coding.....",
+    link: "https://www.youtube.com/channel/UCYGZ4todIWGIUS1B8ZjML1w",
+    thumbnails: [[Object], [Object]],
+    subscribed: false,
+    uploadedVideos: 57,
+    verified: false,
+  },
+  {
+    channelId: "UCae4VwFs7LtQimLOhk6Gdow",
+    description: "",
+    link: "https://www.youtube.com/channel/UCae4VwFs7LtQimLOhk6Gdow",
+    thumbnails: [[Object], [Object]],
+    subscribed: false,
+    uploadedVideos: 2,
+    verified: false,
+  },
+  // all channels with this name
 ];
 ```
 

@@ -19,10 +19,11 @@ function extractId(url) {
 }
 
 // function to search channel on youtube
-const search_channel = (searchTerm) => {
-  yt_search.search(searchTerm, { searchType: "channel" }).then((results) => {
-    return results.channels;
+const search_channel = async (searchTerm) => {
+  const channelsFound = await yt_search.search(searchTerm, {
+    searchType: "channel",
   });
+  return channelsFound.channels;
 };
 
 // get total video count
