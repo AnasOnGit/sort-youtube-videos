@@ -1,6 +1,6 @@
 {
   "name": "sort-youtube-videos",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "sort youtube videos",
   "main": "index.js",
   "scripts": {

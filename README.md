@@ -1,7 +1,14 @@
 # Sort YouTube Videos
 
 Additional sorting options for YouTube channel videos.
-Demo coming soon.
+
+# Demo
+
+`Demo coming soon!!!`
+
+## Support
+
+[**`Support development of this project.`**](https://paypal.me/anasikhlas)
 
 # Why?
 
@@ -21,13 +28,13 @@ with yarn:
 yarn add sort-youtube-videos
 ```
 
-## Sort videos by views **(low to high)**
+## **sortLowToHigh(url);** - Sort videos by views.
 
 | Parameter | Description                           | required |
 | --------- | ------------------------------------- | -------- |
 | URL       | YouTube channel `url` or `channel Id` | `true`   |
 
-## Code
+## Example
 
 ```javascript
 const { sortLowToHigh } = require("sort-youtube-videos");
@@ -75,14 +82,14 @@ sortLowToHigh(url).then((res) => console.log(res));
 ];
 ```
 
-## Sort videos by **duration**
+## **sortByDuration(url);** - Sort videos by **duration**
 
 | Parameter | Description                                                                              | required |
 | --------- | ---------------------------------------------------------------------------------------- | -------- |
 | URL       | YouTube channel `url` or `channel Id`                                                    | `true`   |
 | sortBy    | Two sorting options are available: Default `sl` (short -> long) and `ls` (long -> short) | `false`  |
 
-## Code
+## Example
 
 ```javascript
 const { sortByDuration } = require("sort-youtube-videos");
@@ -132,19 +139,19 @@ sortByDuration(url, sortBy).then((res) => console.log(res));
 ];
 ```
 
-## Get YouTube channel **URL**
+## **search_channel(name);** - Get YouTube channel **URL**
 
 | Parameter    | Description                   | required |
 | ------------ | ----------------------------- | -------- |
 | Channel Name | To get YouTube channel `name` | `true`   |
 
-## Code
+## Example
 
 ```javascript
 const { search_channel } = require("sort-youtube-videos");
 // import { search_channel } from "sort-youtube-videos";
 
-const channelName = "Codestick"; //url or
+const channelName = "Codestick"; // YouTube  channel name
 search_channel(channelName).then((res) => console.log(res));
 
 // response type
@@ -174,8 +181,8 @@ search_channel(channelName).then((res) => console.log(res));
 
 # Sorting options:
 
-- Sort videos by views **_(least viewed video to most viewed video `1 view - 1M views`)_**
-- Sort by video `duration` (shortest duration to longest duration and longest duration to shortest duration )
+- Sort videos by views **_(least viewed video to most viewed video `1 view - 1M views`)_** `sortLowToHigh(url);`
+- Sort by video `duration` (shortest duration to longest duration and longest duration to shortest duration ) `sortByDuration(channelName);`
 - More sorting options coming soon
 
 ## Contributing
