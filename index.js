@@ -86,6 +86,12 @@ const sortVideos = async (videos, sortType) => {
       return a.viewCount - b.viewCount;
     });
   }
+  // hl = high to low
+  if (sortType === "hl") {
+    return videos.sort((a, b) => {
+      return b.viewCount - a.viewCount;
+    });
+  }
 
   // sort by video duration - vdsl = video duration short to long
   if (sortType == "vdsl") {
@@ -102,19 +108,23 @@ const sortVideos = async (videos, sortType) => {
   }
 };
 
-const sortLowToHigh = async (channelId) => {
-  const videos = await get_videos(channelId);
-  let sortedVideos = sortVideos(videos, "lh");
-  return sortedVideos;
-};
-
-const sortByDuration = async (channelId, from = "sl") => {
-  if (from === "sl" || from === "ls") {
-    const videos = await get_videos(channelId);
-    let sortedVideos = sortVideos(videos, `vd${from}`);
+const sortByViews = async (channelId, type = "lh") => {
+  if (type === "lh" || type === "hl") {
+    const videos = await get_videos(channelId, type);
+    let sortedVideos = sortVideos(videos, "lh");
     return sortedVideos;
   }
-  return { message: `"${from}" is not a valid argument.Try 'sl' or 'ls'.` };
+  return { message: `"${type}" is not a valid argument.Try 'lh' or 'hl'.` };
 };
 
-module.exports = { sortLowToHigh, sortByDuration, search_channel };
+const sortByDuration = async (channelId, type = "sl") => {
+  if (type === "sl" || type === "ls") {
+    const videos = await get_videos(channelId);
+    let sortedVideos = sortVideos(videos, `vd${type}`);
+    return sortedVideos;
+  }
+  return { message: `"${type}" is not a valid argument.Try 'sl' or 'ls'.` };
+};
+// for people who have followed old documention. This will be removed in future.
+let sortLowToHigh = sortByViews;
+module.exports = { sortByViews, sortLowToHigh, sortByDuration, search_channel };

@@ -28,21 +28,22 @@ with yarn:
 yarn add sort-youtube-videos
 ```
 
-## **sortLowToHigh(url);** - Sort videos by views.
+## **sortByViews(url):** - Sort videos by views.
 
-| Parameter | Description                           | required |
-| --------- | ------------------------------------- | -------- |
-| URL       | YouTube channel `url` or `channel Id` | `true`   |
+| Parameter       | Description                                                                                                                                             | required |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| URL             | YouTube channel `url` or `channel Id`                                                                                                                   | `true`   |
+| sorting options | Default option `lh` to sort videos from least viewed videos to most viewed videos, `hl` to sort videos from Most popular upload to least popular upload | `false`  |
 
 ## Example
 
 ```javascript
-const { sortLowToHigh } = require("sort-youtube-videos");
+const { sortByViews } = require("sort-youtube-videos");
 // import { sortLowToHigh } from "sort-youtube-videos"
 
 const url = "https://www.youtube.com/channel/UC5RRWuMJu7yP1DQwnW_nAvA"; //url or channel id
 //Sort by views low to high
-sortLowToHigh(url).then((res) => console.log(res));
+sortByViews(url).then((res) => console.log(res));
 
 // response type
 [
@@ -82,12 +83,12 @@ sortLowToHigh(url).then((res) => console.log(res));
 ];
 ```
 
-## **sortByDuration(url);** - Sort videos by **duration**
+## **sortByDuration(url):** - Sort videos by **duration**
 
-| Parameter | Description                                                                              | required |
-| --------- | ---------------------------------------------------------------------------------------- | -------- |
-| URL       | YouTube channel `url` or `channel Id`                                                    | `true`   |
-| sortBy    | Two sorting options are available: Default `sl` (short -> long) and `ls` (long -> short) | `false`  |
+| Parameter       | Description                                                                              | required |
+| --------------- | ---------------------------------------------------------------------------------------- | -------- |
+| URL             | YouTube channel `url` or `channel Id`                                                    | `true`   |
+| sorting options | Two sorting options are available: Default `sl` (short -> long) and `ls` (long -> short) | `false`  |
 
 ## Example
 
@@ -139,7 +140,7 @@ sortByDuration(url, sortBy).then((res) => console.log(res));
 ];
 ```
 
-## **search_channel(name);** - Get YouTube channel **URL**
+## **search_channel(name):** - Get YouTube channel **URL**
 
 | Parameter    | Description                   | required |
 | ------------ | ----------------------------- | -------- |
@@ -181,7 +182,7 @@ search_channel(channelName).then((res) => console.log(res));
 
 # Sorting options:
 
-- Sort videos by views **_(least viewed video to most viewed video `1 view - 1M views`)_** `sortLowToHigh(url);`
+- Sort videos by views **_(least viewed video to most viewed video `1 view - 1M views`)_** `sortByViews(url);`
 - Sort by video `duration` (shortest duration to longest duration and longest duration to shortest duration ) `sortByDuration(channelName);`
 - More sorting options coming soon
 
